@@ -1,27 +1,10 @@
 "use strict";
-var Sorter = /** @class */ (function () {
-    function Sorter(collection) {
-        this.collection = collection;
-    }
-    Sorter.prototype.getSum = function () {
-        console.log(this.collection.reduce(function (acc, cur) { return cur + acc; }, 0));
-    };
-    Sorter.prototype.sort = function () {
-        // bubble sort bad
-        var collection = this.collection;
-        var length = collection.length;
-        for (var i = 0; i < length; i++) {
-            for (var j = 0; j < length - i - 1; j++) {
-                if (collection[j] > collection[j + 1]) {
-                    var leftHand = collection[j];
-                    collection[j] = collection[j + 1];
-                    collection[j + 1] = leftHand;
-                }
-            }
-        }
-        console.log(collection);
-    };
-    return Sorter;
-}());
-var sorter = new Sorter([1, 5, 100, 4, 4]);
+Object.defineProperty(exports, "__esModule", { value: true });
+var sorter_1 = require("./sorter");
+var StringCollection_1 = require("./StringCollection");
+// const numbersCollection = new NumbersCollection([1,50,3,20])
+// const sorter = new Sorter(numbersCollection)
+var stringCollection = new StringCollection_1.StringCollection('I am a random string sort me');
+var sorter = new sorter_1.Sorter(stringCollection);
 sorter.sort();
+console.log(stringCollection.collection);
